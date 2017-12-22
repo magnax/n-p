@@ -1,0 +1,5 @@
+.site-messages
+  - if flash[:notice].present?
+    .site-messages-notice= flash[:notice]
+  - if flash[:error].present?
+    .site-messages-error= flash[:error]
