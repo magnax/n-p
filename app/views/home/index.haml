@@ -1,5 +1,5 @@
 N.P. ;-)
-%form{ action: informations_path, method: :post }
+= form_tag informations_path, method: :post do
   %input#info-text-box{ name: 'text' }
   %button#send-button{ type: 'submit' }
     Send
