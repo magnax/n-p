@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.1'
+gem 'haml-rails'
 gem 'pg'
 gem 'puma'
 gem 'sass-rails'
@@ -26,6 +27,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
