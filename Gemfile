@@ -32,6 +32,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '3.1.1', require: false
   gem 'simplecov', require: false
 end
