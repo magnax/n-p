@@ -13,6 +13,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'json', '1.8.6'
 
 group :development, :test do
   gem 'pry-rails'
