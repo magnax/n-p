@@ -1,0 +1,14 @@
+!!!
+%html{ lang: 'pl' }
+  %head
+    %title Administration
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'admin', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+  %body
+    .admin-bar Administrate
+    = render 'shared/flash'
+    .main
+      = render 'shared/admin/menu'
+      .admin-container
+        = yield
