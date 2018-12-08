@@ -14,6 +14,7 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( building:Building ) ASSERT building.uuid IS UNIQUE
 - CONSTRAINT ON ( country:Country ) ASSERT country.uuid IS UNIQUE
 - CONSTRAINT ON ( diocese:Diocese ) ASSERT diocese.uuid IS UNIQUE
 - CONSTRAINT ON ( parish:Parish ) ASSERT parish.uuid IS UNIQUE
@@ -26,3 +27,4 @@
 - '20181208141115'
 - '20181208141631'
 - '20181208141818'
+- '20181208142418'
