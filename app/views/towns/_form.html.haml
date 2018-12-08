@@ -10,7 +10,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :country
-    = f.text_field :country
+    = f.label :country_id
+    = f.select :country_id, options_for_select(countries, @town.country.try(:id)), include_blank: '-- select --'
   .actions
     = f.submit 'Save'

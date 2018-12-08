@@ -15,10 +15,16 @@ class TownsController < ApplicationController
   # GET /towns/new
   def new
     @town = Town.new
+    render locals: {
+      countries: Country.list_all
+    }
   end
 
   # GET /towns/1/edit
   def edit
+    render locals: {
+      countries: Country.list_all
+    }
   end
 
   # POST /towns

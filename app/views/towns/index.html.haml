@@ -13,7 +13,7 @@
     - @towns.each do |town|
       %tr
         %td= town.name
-        %td= town.country
+        %td= town.country.name
         %td= link_to 'Show', town
         %td= link_to 'Edit', edit_town_path(town)
         %td= link_to 'Destroy', town, method: :delete, data: { confirm: 'Are you sure?' }
