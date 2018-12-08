@@ -17,6 +17,7 @@
 - CONSTRAINT ON ( building:Building ) ASSERT building.uuid IS UNIQUE
 - CONSTRAINT ON ( country:Country ) ASSERT country.uuid IS UNIQUE
 - CONSTRAINT ON ( diocese:Diocese ) ASSERT diocese.uuid IS UNIQUE
+- CONSTRAINT ON ( function:Function ) ASSERT function.uuid IS UNIQUE
 - CONSTRAINT ON ( parish:Parish ) ASSERT parish.uuid IS UNIQUE
 - CONSTRAINT ON ( person:Person ) ASSERT person.uuid IS UNIQUE
 - CONSTRAINT ON ( town:Town ) ASSERT town.uuid IS UNIQUE
@@ -28,3 +29,4 @@
 - '20181208141631'
 - '20181208141818'
 - '20181208142418'
+- '20181208144206'
