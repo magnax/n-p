@@ -1,0 +1,23 @@
+%h1 Listing dioceses
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Town
+      %th
+      %th
+      %th
+
+  %tbody
+    - @dioceses.each do |diocese|
+      %tr
+        %td= diocese.name
+        %td= diocese.town
+        %td= link_to 'Show', diocese
+        %td= link_to 'Edit', edit_diocese_path(diocese)
+        %td= link_to 'Destroy', diocese, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Diocese', new_diocese_path

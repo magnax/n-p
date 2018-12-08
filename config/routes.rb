@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :parishes
+  resources :dioceses
   resources :towns
   resources :countries
   resources :people

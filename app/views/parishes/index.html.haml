@@ -1,0 +1,25 @@
+%h1 Listing parishes
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Town
+      %th Diocese
+      %th
+      %th
+      %th
+
+  %tbody
+    - @parishes.each do |parish|
+      %tr
+        %td= parish.name
+        %td= parish.town
+        %td= parish.diocese
+        %td= link_to 'Show', parish
+        %td= link_to 'Edit', edit_parish_path(parish)
+        %td= link_to 'Destroy', parish, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Parish', new_parish_path

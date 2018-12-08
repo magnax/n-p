@@ -1,0 +1,16 @@
+= form_for @diocese do |f|
+  - if @diocese.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@diocese.errors.count, "error")} prohibited this diocese from being saved:"
+      %ul
+        - @diocese.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :town
+    = f.text_field :town
+  .actions
+    = f.submit 'Save'

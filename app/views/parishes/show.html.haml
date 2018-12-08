@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @parish.name
+%p
+  %b Town:
+  = @parish.town
+%p
+  %b Diocese:
+  = @parish.diocese
+
+= link_to 'Edit', edit_parish_path(@parish)
+\|
+= link_to 'Back', parishes_path
