@@ -15,10 +15,16 @@ class DiocesesController < ApplicationController
   # GET /dioceses/new
   def new
     @diocese = Diocese.new
+    render locals: {
+      towns: Town.list_all
+    }
   end
 
   # GET /dioceses/1/edit
   def edit
+    render locals: {
+      towns: Town.list_all
+    }
   end
 
   # POST /dioceses

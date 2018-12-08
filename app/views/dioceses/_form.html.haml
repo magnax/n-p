@@ -10,7 +10,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :town
-    = f.text_field :town
+    = f.label :town_id
+    = f.select :town_id, options_for_select(towns, @diocese.town.try(:id)), include_blank: '--- select ---'
   .actions
     = f.submit 'Save'

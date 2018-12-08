@@ -4,5 +4,7 @@ class Town
 
   has_one :out, :country, type: :LOCATED
 
-
+  def self.list_all
+    Town.all.map { |t| [t.name, t.id] }
+  end
 end
