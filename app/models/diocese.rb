@@ -4,5 +4,7 @@ class Diocese
 
   has_one :out, :town, type: :LOCATED
 
-
+  def self.list_all
+    Diocese.all.map { |d| [d.name, d.id] }
+  end
 end

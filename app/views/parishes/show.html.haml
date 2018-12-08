@@ -5,10 +5,10 @@
   = @parish.name
 %p
   %b Town:
-  = @parish.town
+  = @parish.town.name
 %p
   %b Diocese:
-  = @parish.diocese
+  = @parish.diocese.name
 
 = link_to 'Edit', edit_parish_path(@parish)
 \|

@@ -10,10 +10,10 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :town
-    = f.text_field :town
+    = f.label :town_id
+    = f.select :town_id, options_for_select(towns, @parish.town.try(:id)), include_blank: '--- select ---'
   .field
-    = f.label :diocese
-    = f.text_field :diocese
+    = f.label :diocese_id
+    = f.select :diocese_id, options_for_select(dioceses, @parish.diocese.try(:id)), include_blank: '--- select ---'
   .actions
     = f.submit 'Save'
