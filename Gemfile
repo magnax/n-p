@@ -24,6 +24,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'neo4j-rake_tasks'
 end
 
 group :development do
