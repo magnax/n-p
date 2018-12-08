@@ -16,6 +16,7 @@ gem 'jbuilder'
 gem 'json', '1.8.6'
 gem 'jquery-rails'
 gem 'jquery-datatables'
+gem 'neo4j'
 
 group :development, :test do
   gem 'pry-rails'
