@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @person.first_name
+%p
+  %b Last name:
+  = @person.last_name
+%p
+  %b Pesel:
+  = @person.pesel
+%p
+  %b Date of birth:
+  = @person.date_of_birth
+
+= link_to 'Edit', edit_person_path(@person)
+\|
+= link_to 'Back', people_path
