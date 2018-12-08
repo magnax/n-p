@@ -16,7 +16,9 @@
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
 - CONSTRAINT ON ( country:Country ) ASSERT country.uuid IS UNIQUE
 - CONSTRAINT ON ( person:Person ) ASSERT person.uuid IS UNIQUE
+- CONSTRAINT ON ( town:Town ) ASSERT town.uuid IS UNIQUE
 :indexes: []
 :versions:
 - '20181208130427'
 - '20181208140321'
+- '20181208141115'
