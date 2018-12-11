@@ -13,10 +13,10 @@
     = f.label :kind
     = f.text_field :kind
   .field
-    = f.label :town
-    = f.text_field :town
+    = f.label :town_id
+    = f.select :town_id, options_for_select(towns, @building.town.try(:id)), include_blank: '--- select ---'
   .field
-    = f.label :parish
-    = f.text_field :parish
+    = f.label :parish_id
+    = f.select :parish_id, options_for_select(parishes, @building.parish.try(:id)), include_blank: '--- select ---'
   .actions
     = f.submit 'Save'

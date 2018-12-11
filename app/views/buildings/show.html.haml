@@ -8,10 +8,10 @@
   = @building.kind
 %p
   %b Town:
-  = @building.town
+  = @building.town.name
 %p
   %b Parish:
-  = @building.parish
+  = @building.parish.name
 
 = link_to 'Edit', edit_building_path(@building)
 \|

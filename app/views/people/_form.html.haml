@@ -17,6 +17,6 @@
     = f.text_field :pesel
   .field
     = f.label :date_of_birth
-    = f.date_select :date_of_birth
+    = f.date_select :date_of_birth, include_blank: true
   .actions
     = f.submit 'Save'

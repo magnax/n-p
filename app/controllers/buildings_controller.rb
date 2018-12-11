@@ -15,10 +15,18 @@ class BuildingsController < ApplicationController
   # GET /buildings/new
   def new
     @building = Building.new
+    render locals: {
+      towns: Town.list_all,
+      parishes: Parish.list_all
+    }
   end
 
   # GET /buildings/1/edit
   def edit
+    render locals: {
+      towns: Town.list_all,
+      parishes: Parish.list_all
+    }
   end
 
   # POST /buildings
