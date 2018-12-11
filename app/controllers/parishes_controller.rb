@@ -14,7 +14,7 @@ class ParishesController < ApplicationController
 
   # GET /parishes/new
   def new
-    @parish = Parish.new
+    @parish = Parish.new(town_id: params[:town_id])
     render locals: {
       dioceses: Diocese.list_all,
       towns: Town.list_all
