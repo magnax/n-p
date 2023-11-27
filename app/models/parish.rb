@@ -6,6 +6,6 @@ class Parish
   has_one :out, :diocese, type: :BELONGS_TO
 
   def self.list_all
-    Parish.all.map { |p| ["#{p.town.name} | #{p.name}", p.id] }
+    Parish.all.map { |p| ["#{p.town&.name} | #{p.name}", p.id] }
   end
 end

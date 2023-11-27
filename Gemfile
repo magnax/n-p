@@ -5,36 +5,36 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '5.1.4'
 gem 'haml-rails'
-gem 'pg'
-gem 'puma'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'turbolinks'
 gem 'jbuilder'
-gem 'json', '1.8.6'
-gem 'jquery-rails'
 gem 'jquery-datatables'
+gem 'jquery-rails'
+gem 'json', '1.8.6'
 gem 'neo4j'
+gem 'pg', '0.18'
+gem 'puma'
+gem 'rails', '5.1.4'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development, :test do
+  gem 'capybara'
+  gem 'neo4j-rake_tasks'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'pry-byebug'
-  gem 'capybara'
   gem 'rspec-rails'
-  gem 'neo4j-rake_tasks'
 end
 
 group :development do
-  gem 'web-console'
-  gem 'listen'
-  gem 'spring'
-  gem 'spring-watcher-listen'
-  gem 'spring-commands-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'listen'
+  # gem 'spring'
+  # gem 'spring-commands-rspec'
+  # gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do

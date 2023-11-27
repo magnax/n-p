@@ -13,7 +13,7 @@
     - @dioceses.each do |diocese|
       %tr
         %td= diocese.name
-        %td= diocese.town.name
+        %td= diocese.town&.name
         %td= link_to 'Show', diocese
         %td= link_to 'Edit', edit_diocese_path(diocese)
         %td= link_to 'Destroy', diocese, method: :delete, data: { confirm: 'Are you sure?' }

@@ -16,7 +16,7 @@
       %tr
         %td= town.name
         %td= town.postcode
-        %td= town.country.name
+        %td= town.country&.name
         %td= link_to 'Add parish', new_parish_path(town_id: town.id)
         %td= link_to 'Show', town
         %td= link_to 'Edit', edit_town_path(town)

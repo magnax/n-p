@@ -14,8 +14,8 @@
     - @parishes.each do |parish|
       %tr
         %td= parish.name
-        %td= parish.town.name
-        %td= parish.diocese.name
+        %td= parish.town&.name
+        %td= parish.diocese&.name
         %td= link_to 'Show', parish
         %td= link_to 'Edit', edit_parish_path(parish)
         %td= link_to 'Destroy', parish, method: :delete, data: { confirm: 'Are you sure?' }

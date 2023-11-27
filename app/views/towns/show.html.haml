@@ -8,7 +8,7 @@
     = @town.postcode
 %p
   %b Country:
-  = @town.country.name
+  = @town.country&.name
 
 = link_to 'Edit', edit_town_path(@town)
 \|

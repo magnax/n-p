@@ -9,7 +9,7 @@ describe 'home page' do
 
     it 'has a form to send information' do
       visit '/'
-      expect(page).to have_selector('input[name="text"]')
+      expect(page).to have_selector('textarea[name="text"]')
       expect(page).to have_css('#info-text-box')
       expect(page).to have_selector('button[type="submit"]')
     end
