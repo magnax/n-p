@@ -9,11 +9,11 @@ gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-datatables'
 gem 'jquery-rails'
-gem 'json', '1.8.6'
+gem 'json'
 gem 'neo4j'
-gem 'pg', '0.18'
+gem 'pg'
 gem 'puma'
-gem 'rails', '5.1.4'
+gem 'rails', '6.1.7.3'
 gem 'sass-rails'
 gem 'turbolinks'
 gem 'uglifier'
@@ -31,14 +31,11 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen'
-  # gem 'spring'
-  # gem 'spring-commands-rspec'
-  # gem 'spring-watcher-listen'
   gem 'web-console'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers', '3.1.1', require: false
+  gem 'shoulda-matchers', require: false
   gem 'simplecov', require: false
 end
