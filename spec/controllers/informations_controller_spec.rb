@@ -16,8 +16,8 @@ describe InformationsController do
       before { request.env['HTTP_REFERER'] = "http://example.com" }
 
       it 'creates information record' do
-        expect { subject }.to_not change { Information.count }
+        expect { subject }.to_not(change { Information.count })
       end
-    end    
+    end
   end
 end

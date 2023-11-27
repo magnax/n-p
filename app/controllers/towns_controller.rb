@@ -1,5 +1,5 @@
 class TownsController < ApplicationController
-  before_action :set_town, only: [:show, :edit, :update, :destroy]
+  before_action :set_town, only: %i[show edit update destroy]
 
   # GET /towns
   # GET /towns.json
@@ -9,8 +9,7 @@ class TownsController < ApplicationController
 
   # GET /towns/1
   # GET /towns/1.json
-  def show
-  end
+  def show; end
 
   # GET /towns/new
   def new

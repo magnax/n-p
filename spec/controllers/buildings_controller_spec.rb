@@ -27,13 +27,13 @@ RSpec.describe BuildingsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Building. As you add validations to Building, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     skip("Add a hash of attributes valid for your model")
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     skip("Add a hash of attributes invalid for your model")
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -42,7 +42,7 @@ RSpec.describe BuildingsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      building = Building.create! valid_attributes
+      Building.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,7 +51,7 @@ RSpec.describe BuildingsController, type: :controller do
   describe "GET #show" do
     it "returns a success response" do
       building = Building.create! valid_attributes
-      get :show, params: {id: building.to_param}, session: valid_session
+      get :show, params: { id: building.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -66,7 +66,7 @@ RSpec.describe BuildingsController, type: :controller do
   describe "GET #edit" do
     it "returns a success response" do
       building = Building.create! valid_attributes
-      get :edit, params: {id: building.to_param}, session: valid_session
+      get :edit, params: { id: building.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -74,20 +74,20 @@ RSpec.describe BuildingsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Building" do
-        expect {
-          post :create, params: {building: valid_attributes}, session: valid_session
-        }.to change(Building, :count).by(1)
+        expect do
+          post :create, params: { building: valid_attributes }, session: valid_session
+        end.to change(Building, :count).by(1)
       end
 
       it "redirects to the created building" do
-        post :create, params: {building: valid_attributes}, session: valid_session
+        post :create, params: { building: valid_attributes }, session: valid_session
         expect(response).to redirect_to(Building.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {building: invalid_attributes}, session: valid_session
+        post :create, params: { building: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -95,20 +95,20 @@ RSpec.describe BuildingsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         skip("Add a hash of attributes valid for your model")
-      }
+      end
 
       it "updates the requested building" do
         building = Building.create! valid_attributes
-        put :update, params: {id: building.to_param, building: new_attributes}, session: valid_session
+        put :update, params: { id: building.to_param, building: new_attributes }, session: valid_session
         building.reload
         skip("Add assertions for updated state")
       end
 
       it "redirects to the building" do
         building = Building.create! valid_attributes
-        put :update, params: {id: building.to_param, building: valid_attributes}, session: valid_session
+        put :update, params: { id: building.to_param, building: valid_attributes }, session: valid_session
         expect(response).to redirect_to(building)
       end
     end
@@ -116,7 +116,7 @@ RSpec.describe BuildingsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         building = Building.create! valid_attributes
-        put :update, params: {id: building.to_param, building: invalid_attributes}, session: valid_session
+        put :update, params: { id: building.to_param, building: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -125,16 +125,15 @@ RSpec.describe BuildingsController, type: :controller do
   describe "DELETE #destroy" do
     it "destroys the requested building" do
       building = Building.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: building.to_param}, session: valid_session
-      }.to change(Building, :count).by(-1)
+      expect do
+        delete :destroy, params: { id: building.to_param }, session: valid_session
+      end.to change(Building, :count).by(-1)
     end
 
     it "redirects to the buildings list" do
       building = Building.create! valid_attributes
-      delete :destroy, params: {id: building.to_param}, session: valid_session
+      delete :destroy, params: { id: building.to_param }, session: valid_session
       expect(response).to redirect_to(buildings_url)
     end
   end
-
 end

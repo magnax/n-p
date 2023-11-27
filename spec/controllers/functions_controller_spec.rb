@@ -24,17 +24,16 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe FunctionsController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # Function. As you add validations to Function, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     skip("Add a hash of attributes valid for your model")
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     skip("Add a hash of attributes invalid for your model")
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -43,7 +42,7 @@ RSpec.describe FunctionsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      function = Function.create! valid_attributes
+      Function.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -52,7 +51,7 @@ RSpec.describe FunctionsController, type: :controller do
   describe "GET #show" do
     it "returns a success response" do
       function = Function.create! valid_attributes
-      get :show, params: {id: function.to_param}, session: valid_session
+      get :show, params: { id: function.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -67,7 +66,7 @@ RSpec.describe FunctionsController, type: :controller do
   describe "GET #edit" do
     it "returns a success response" do
       function = Function.create! valid_attributes
-      get :edit, params: {id: function.to_param}, session: valid_session
+      get :edit, params: { id: function.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -75,20 +74,20 @@ RSpec.describe FunctionsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Function" do
-        expect {
-          post :create, params: {function: valid_attributes}, session: valid_session
-        }.to change(Function, :count).by(1)
+        expect do
+          post :create, params: { function: valid_attributes }, session: valid_session
+        end.to change(Function, :count).by(1)
       end
 
       it "redirects to the created function" do
-        post :create, params: {function: valid_attributes}, session: valid_session
+        post :create, params: { function: valid_attributes }, session: valid_session
         expect(response).to redirect_to(Function.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {function: invalid_attributes}, session: valid_session
+        post :create, params: { function: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -96,20 +95,20 @@ RSpec.describe FunctionsController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         skip("Add a hash of attributes valid for your model")
-      }
+      end
 
       it "updates the requested function" do
         function = Function.create! valid_attributes
-        put :update, params: {id: function.to_param, function: new_attributes}, session: valid_session
+        put :update, params: { id: function.to_param, function: new_attributes }, session: valid_session
         function.reload
         skip("Add assertions for updated state")
       end
 
       it "redirects to the function" do
         function = Function.create! valid_attributes
-        put :update, params: {id: function.to_param, function: valid_attributes}, session: valid_session
+        put :update, params: { id: function.to_param, function: valid_attributes }, session: valid_session
         expect(response).to redirect_to(function)
       end
     end
@@ -117,7 +116,7 @@ RSpec.describe FunctionsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         function = Function.create! valid_attributes
-        put :update, params: {id: function.to_param, function: invalid_attributes}, session: valid_session
+        put :update, params: { id: function.to_param, function: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -126,16 +125,15 @@ RSpec.describe FunctionsController, type: :controller do
   describe "DELETE #destroy" do
     it "destroys the requested function" do
       function = Function.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: function.to_param}, session: valid_session
-      }.to change(Function, :count).by(-1)
+      expect do
+        delete :destroy, params: { id: function.to_param }, session: valid_session
+      end.to change(Function, :count).by(-1)
     end
 
     it "redirects to the functions list" do
       function = Function.create! valid_attributes
-      delete :destroy, params: {id: function.to_param}, session: valid_session
+      delete :destroy, params: { id: function.to_param }, session: valid_session
       expect(response).to redirect_to(functions_url)
     end
   end
-
 end

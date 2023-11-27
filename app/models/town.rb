@@ -1,4 +1,4 @@
-class Town 
+class Town
   include Neo4j::ActiveNode
   property :name, type: String
   property :postcode, type: String

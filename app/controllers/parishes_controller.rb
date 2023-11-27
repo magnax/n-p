@@ -1,5 +1,5 @@
 class ParishesController < ApplicationController
-  before_action :set_parish, only: [:show, :edit, :update, :destroy]
+  before_action :set_parish, only: %i[show edit update destroy]
 
   # GET /parishes
   # GET /parishes.json
@@ -9,8 +9,7 @@ class ParishesController < ApplicationController
 
   # GET /parishes/1
   # GET /parishes/1.json
-  def show
-  end
+  def show; end
 
   # GET /parishes/new
   def new
@@ -70,13 +69,14 @@ class ParishesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_parish
-      @parish = Parish.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def parish_params
-      params.require(:parish).permit(:name, :town_id, :diocese_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_parish
+    @parish = Parish.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def parish_params
+    params.require(:parish).permit(:name, :town_id, :diocese_id)
+  end
 end

@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe BuildingsController, type: :routing do
   describe "routing" do
-
     it "routes to #index" do
       expect(:get => "/buildings").to route_to("buildings#index")
     end
@@ -34,6 +33,5 @@ RSpec.describe BuildingsController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/buildings/1").to route_to("buildings#destroy", :id => "1")
     end
-
   end
 end

@@ -24,17 +24,16 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe ParishesController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # Parish. As you add validations to Parish, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     skip("Add a hash of attributes valid for your model")
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     skip("Add a hash of attributes invalid for your model")
-  }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -43,7 +42,7 @@ RSpec.describe ParishesController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      parish = Parish.create! valid_attributes
+      Parish.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -52,7 +51,7 @@ RSpec.describe ParishesController, type: :controller do
   describe "GET #show" do
     it "returns a success response" do
       parish = Parish.create! valid_attributes
-      get :show, params: {id: parish.to_param}, session: valid_session
+      get :show, params: { id: parish.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -67,7 +66,7 @@ RSpec.describe ParishesController, type: :controller do
   describe "GET #edit" do
     it "returns a success response" do
       parish = Parish.create! valid_attributes
-      get :edit, params: {id: parish.to_param}, session: valid_session
+      get :edit, params: { id: parish.to_param }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -75,20 +74,20 @@ RSpec.describe ParishesController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Parish" do
-        expect {
-          post :create, params: {parish: valid_attributes}, session: valid_session
-        }.to change(Parish, :count).by(1)
+        expect do
+          post :create, params: { parish: valid_attributes }, session: valid_session
+        end.to change(Parish, :count).by(1)
       end
 
       it "redirects to the created parish" do
-        post :create, params: {parish: valid_attributes}, session: valid_session
+        post :create, params: { parish: valid_attributes }, session: valid_session
         expect(response).to redirect_to(Parish.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {parish: invalid_attributes}, session: valid_session
+        post :create, params: { parish: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -96,20 +95,20 @@ RSpec.describe ParishesController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) {
+      let(:new_attributes) do
         skip("Add a hash of attributes valid for your model")
-      }
+      end
 
       it "updates the requested parish" do
         parish = Parish.create! valid_attributes
-        put :update, params: {id: parish.to_param, parish: new_attributes}, session: valid_session
+        put :update, params: { id: parish.to_param, parish: new_attributes }, session: valid_session
         parish.reload
         skip("Add assertions for updated state")
       end
 
       it "redirects to the parish" do
         parish = Parish.create! valid_attributes
-        put :update, params: {id: parish.to_param, parish: valid_attributes}, session: valid_session
+        put :update, params: { id: parish.to_param, parish: valid_attributes }, session: valid_session
         expect(response).to redirect_to(parish)
       end
     end
@@ -117,7 +116,7 @@ RSpec.describe ParishesController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         parish = Parish.create! valid_attributes
-        put :update, params: {id: parish.to_param, parish: invalid_attributes}, session: valid_session
+        put :update, params: { id: parish.to_param, parish: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end
@@ -126,16 +125,15 @@ RSpec.describe ParishesController, type: :controller do
   describe "DELETE #destroy" do
     it "destroys the requested parish" do
       parish = Parish.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: parish.to_param}, session: valid_session
-      }.to change(Parish, :count).by(-1)
+      expect do
+        delete :destroy, params: { id: parish.to_param }, session: valid_session
+      end.to change(Parish, :count).by(-1)
     end
 
     it "redirects to the parishes list" do
       parish = Parish.create! valid_attributes
-      delete :destroy, params: {id: parish.to_param}, session: valid_session
+      delete :destroy, params: { id: parish.to_param }, session: valid_session
       expect(response).to redirect_to(parishes_url)
     end
   end
-
 end

@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe ParishesController, type: :routing do
   describe "routing" do
-
     it "routes to #index" do
       expect(:get => "/parishes").to route_to("parishes#index")
     end
@@ -34,6 +33,5 @@ RSpec.describe ParishesController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/parishes/1").to route_to("parishes#destroy", :id => "1")
     end
-
   end
 end

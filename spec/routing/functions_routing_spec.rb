@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe FunctionsController, type: :routing do
   describe "routing" do
-
     it "routes to #index" do
       expect(:get => "/functions").to route_to("functions#index")
     end
@@ -34,6 +33,5 @@ RSpec.describe FunctionsController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/functions/1").to route_to("functions#destroy", :id => "1")
     end
-
   end
 end

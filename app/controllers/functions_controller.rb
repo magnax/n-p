@@ -1,5 +1,5 @@
 class FunctionsController < ApplicationController
-  before_action :set_function, only: [:show, :edit, :update, :destroy]
+  before_action :set_function, only: %i[show edit update destroy]
 
   # GET /functions
   # GET /functions.json
@@ -9,8 +9,7 @@ class FunctionsController < ApplicationController
 
   # GET /functions/1
   # GET /functions/1.json
-  def show
-  end
+  def show; end
 
   # GET /functions/new
   def new
@@ -18,8 +17,7 @@ class FunctionsController < ApplicationController
   end
 
   # GET /functions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /functions
   # POST /functions.json
@@ -62,13 +60,14 @@ class FunctionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_function
-      @function = Function.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def function_params
-      params.require(:function).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_function
+    @function = Function.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def function_params
+    params.require(:function).permit(:name)
+  end
 end

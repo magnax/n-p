@@ -9,10 +9,11 @@ gem 'neo4j'
 gem 'pg'
 gem 'puma'
 gem 'rails', '6.1.7.3'
+gem 'rubocop'
 gem 'sass-rails'
+gem 'sorted_set'
 gem 'turbolinks'
 gem 'uglifier'
-gem 'sorted_set'
 
 group :development, :test do
   gem 'capybara'

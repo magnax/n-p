@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe PeopleController, type: :routing do
   describe "routing" do
-
     it "routes to #index" do
       expect(:get => "/people").to route_to("people#index")
     end
@@ -34,6 +33,5 @@ RSpec.describe PeopleController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/people/1").to route_to("people#destroy", :id => "1")
     end
-
   end
 end
