@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InformationsController < ApplicationController
   def create
     information = Information.new(information_params)

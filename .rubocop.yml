@@ -13,31 +13,31 @@ Metrics/BlockLength:
   Enabled: false
 
 Layout/EndOfLine:
-  Enabled: false
+  Enabled: true
 
 Style/HashSyntax:
-  Enabled: false
+  Enabled: true
 
 Style/ClassAndModuleChildren:
-  Enabled: false
+  Enabled: true
 
 Style/ExpandPathArguments:
-  Enabled: false
+  Enabled: true
 
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  Enabled: true
 
 Layout/TrailingEmptyLines:
-  Enabled: false
+  Enabled: true
 
 Layout/ExtraSpacing:
-  Enabled: false
+  Enabled: true
 
 Style/RedundantConstantBase:
-  Enabled: false
+  Enabled: true
 
 Lint/EmptyBlock:
   Enabled: false

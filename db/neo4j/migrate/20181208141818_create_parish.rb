@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateParish < Neo4j::Migrations::Base
   def up
     add_constraint :Parish, :uuid

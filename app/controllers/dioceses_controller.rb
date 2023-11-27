@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DiocesesController < ApplicationController
   before_action :set_diocese, only: %i[show edit update destroy]
 

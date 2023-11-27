@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBuilding < Neo4j::Migrations::Base
   def up
     add_constraint :Building, :uuid

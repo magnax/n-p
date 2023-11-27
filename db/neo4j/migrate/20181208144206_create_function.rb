@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateFunction < Neo4j::Migrations::Base
   def up
     add_constraint :Function, :uuid

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Town
   include Neo4j::ActiveNode
   property :name, type: String

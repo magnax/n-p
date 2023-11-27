@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FunctionsController < ApplicationController
   before_action :set_function, only: %i[show edit update destroy]
 

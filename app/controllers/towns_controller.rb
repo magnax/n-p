@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TownsController < ApplicationController
   before_action :set_town, only: %i[show edit update destroy]
 

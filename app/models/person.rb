@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Person
   include Neo4j::ActiveNode
   property :first_name, type: String
